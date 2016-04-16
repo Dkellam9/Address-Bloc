@@ -74,5 +74,24 @@
        entry_five = book.entries[4]
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
+     
+     #entries_2.csv
+     it "imports the 6th entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_six = book.entries[2]
+       check_entry(entry_six, "Barack", "685-419-3577", "supreme_leader@whitehouse.gov")
+     end
+     
+     it "imports the 7th entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_seven = book.entries[1]
+       check_entry(entry_seven, "Ash", "518-563-2984", "boomstick@valueshop.com")
+     end
+     
+     it "imports the 8th entry" do
+       book.import_from_csv("entries_2.csv")
+       entry_eight = book.entries[0]
+       check_entry(entry_eight, "Adam", "467-641-9812", "icarus@serifindustries.com")
+     end
    end
 end
