@@ -4,6 +4,15 @@
   
    let(:book) {AddressBook.new}
    
+   describe "#purge" do
+    it "should delete all entries" do
+      book.add_entry("Joe", "555-555-3660", "joe@blocmail.com")
+      book.add_entry("Sally", "555-555-4646", "sally@blocmail.com")
+      book.purge
+      expect(book.entries.size).to eq(0)
+    end
+   end
+   
    def check_entry(entry, expected_name, expected_number, expected_email)
      expect(entry.name).to eq expected_name
      expect(entry.phone_number).to eq expected_number

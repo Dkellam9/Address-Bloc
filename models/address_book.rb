@@ -44,4 +44,8 @@ require "csv"
      end
      nil
    end
+   
+   def purge
+     @entries = []
+   end
  end
